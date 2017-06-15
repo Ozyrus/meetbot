@@ -14,7 +14,7 @@
 								<input id = "eventtime" pattern = "$Text">
 									<var name = "Event_time" value = "$Text" scope = 'context'/>
 									<context>
-										<var name = "Event_1" value = "json("{ name:$Event_name, place:$Event_place, time:$Event_time }")" scope = "user"/>
+										<var name = "Event_1" value = '{ "name":"$Event_name", "place":"$Event_place", "time":"$Event_time" }' scope = "user"/>
 										<output value = "Хорошо; параметры встречи - $Event_1.place "/>
 									</context>
 								</input>
