@@ -24,10 +24,9 @@
 				</input>
 		</context>
 	</input>
-	<input id ="callevent" pattern = "* событие $Event_name">
+	<input id ="callevent" pattern = "* событие *">
 		<context if ="empty$Event_name" modal = "True">
-			<var "Eventname" value = "$Event_name"/>
-			<output value = "Нет такого события $Eventname. Хотите создать?"/>
+			<output value = "Нет такого события. Хотите создать?"/>
 			<input id = "yes" pattern = "* да *">
 				<context id = "eventname_cntxt"/>
 			</input>
