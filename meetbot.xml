@@ -15,7 +15,7 @@
 								<context>
 									<var name = "Event_time" value = "$Text"/>
 									<output value = "Хорошо; встреча называется $Event_name, будет проходить в $Event_place в $Event_time"/>
-									<var name = "$Event_name" value = "$Event_name $Event_place $Event_time" scope = "user"/>
+									<var name = "Event_name" value = "$Event_name $Event_place $Event_time" scope = "user"/>
 								</context>
 							</input>
 							</context>
