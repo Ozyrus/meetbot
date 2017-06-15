@@ -1,0 +1,42 @@
+<context id = "root">
+	<input id ="startmessage" pattern = "/start">
+		<var name = "starttype" value = "Привет. Я бот для назначения встреч."/>
+		<context id = "eventname_cntxt">
+			<output = "$starttype Как назовем событие?"/>
+				<input id = "eventname" pattern = "$Text">
+					<context>
+						<var name = "Event_name" pattern = "$Text"/>
+						<output = "Окей, встреча будет называться $Event_name. Теперь место встречи"/>
+						<input id = "place" pattern = "$Text">
+							<context>
+							<var name = "Event_place" value = "$Text">
+							<ouput = "Ок: встреча будет в $Event_name. Теперь время и дату."/>
+							<input id = "eventtime" pattern = "$Text">
+								<context>
+								<var name = "Event_time" value = "$Text"/>
+								<ouput = "Хорошо; встреча называется $Event_name, будет проходить в $Event_place в $Event_time">
+									<context id = "root"/>
+								<var name = "$Event_name" value = "$Event_name $Event_place $Event_time" scope = "user">
+								</context>
+							</context>
+						</input>
+					</context>
+				</input>
+		</context>
+	</input>
+	<input id ="callevent" pattern = "* событие $Event_name">
+		<context if ="empty$Event_name" modal = "True">
+			<var "Eventname" value = "$Event_name"/>
+			<output value = "Нет такого события $Eventname. Хотите создать?"/>
+			<input id = "yes" pattern = "* да *">
+				<context id = "eventname_cntxt"/>
+			</input>
+			<input id = "no" pattern = "* нет *">
+				<context id = "root"/>
+			</input>
+		</context>
+		<context>
+			<output value = "$Eventname"/>
+		</context>
+	</input>
+</context>
