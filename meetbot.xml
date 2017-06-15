@@ -4,18 +4,18 @@
 		<context id = "eventname_cntxt">
 			<output value = "$starttype Как назовем событие?"/>
 				<input id = "eventname" pattern = "$Text">
-					<var name = "Event_name" value = "$Text"/>
+					<var name = "Event_name" value = "$Text" scope = 'context'/>
 					<context id = "eventplace">
 						<output value = "Окей, встреча будет называться $Event_name. Теперь место встречи"/>
 							<input id = "place" pattern = "$Text">
-								<var name = "Event_place" value = "$Text"/>
+								<var name = "Event_place" value = "$Text" scope = 'context'/>
 								<context>
 								<output value = "Ок: встреча будет в $Event_place. Теперь время и дату."/>
 								<input id = "eventtime" pattern = "$Text">
-									<var name = "Event_time" value = "$Text"/>
+									<var name = "Event_time" value = "$Text" scope = 'context'/>
 									<context>
-										<output value = "Хорошо; встреча называется $Event_name, будет проходить в $Event_place в $Event_time"/>
 										<var name = "$Event_name" value = "$Event_name $Event_place $Event_time" scope = "user"/>
+										<output value = "Хорошо; параметры встречи - %Event_name"/>
 									</context>
 								</input>
 								</context>
@@ -24,7 +24,7 @@
 				</input>
 		</context>
 	</input>
-	<!-- <input id ="callevent" pattern = "* событие *">
+	<input id ="callevent" pattern = "* событие *">
 		<context if ="empty$Event_name" modal = "True">
 			<output value = "Нет такого события. Хотите создать?"/>
 			<input id = "yes" pattern = "* да *">
@@ -37,5 +37,5 @@
 		<context>
 			<output value = "$Event_name"/>
 		</context>
-	</input> -->
+	</input>
 </context>
