@@ -1,4 +1,4 @@
-<context id = "root">
+<context>
 	<input id ="startmessage" pattern = "/start">
 		<var name = "starttype" value = "Привет. Я бот для назначения встреч."/>
 		<context id = "eventname_cntxt">
