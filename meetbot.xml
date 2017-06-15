@@ -2,11 +2,11 @@
 	<input id ="startmessage" pattern = "/start">
 		<var name = "starttype" value = "Привет. Я бот для назначения встреч."/>
 		<context id = "eventname_cntxt">
-			<output = "$starttype Как назовем событие?"/>
+			<output value = "$starttype Как назовем событие?"/>
 				<input id = "eventname" pattern = "$Text">
 					<context>
 						<var name = "Event_name" pattern = "$Text"/>
-						<output = "Окей, встреча будет называться $Event_name. Теперь место встречи"/>
+						<output value = "Окей, встреча будет называться $Event_name. Теперь место встречи"/>
 						<input id = "place" pattern = "$Text">
 							<context>
 							<var name = "Event_place" value = "$Text">
@@ -14,7 +14,7 @@
 							<input id = "eventtime" pattern = "$Text">
 								<context>
 								<var name = "Event_time" value = "$Text"/>
-								<ouput = "Хорошо; встреча называется $Event_name, будет проходить в $Event_place в $Event_time"/>
+								<ouput value = "Хорошо; встреча называется $Event_name, будет проходить в $Event_place в $Event_time"/>
 									<context id = "root"/>
 								<var name = "$Event_name" value = "$Event_name $Event_place $Event_time" scope = "user">
 								</context>
