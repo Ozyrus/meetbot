@@ -10,7 +10,7 @@
 						<input id = "place" pattern = "$Text">
 							<context>
 							<var name = "Event_place" value = "$Text">
-							<ouput = "Ок: встреча будет в $Event_name. Теперь время и дату."/>
+							<ouput value = "Ок: встреча будет в $Event_name. Теперь время и дату."/>
 							<input id = "eventtime" pattern = "$Text">
 								<context>
 								<var name = "Event_time" value = "$Text"/>
