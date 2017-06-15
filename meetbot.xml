@@ -14,7 +14,7 @@
 							<input id = "eventtime" pattern = "$Text">
 								<context>
 								<var name = "Event_time" value = "$Text"/>
-								<ouput = "Хорошо; встреча называется $Event_name, будет проходить в $Event_place в $Event_time">
+								<ouput = "Хорошо; встреча называется $Event_name, будет проходить в $Event_place в $Event_time"/>
 									<context id = "root"/>
 								<var name = "$Event_name" value = "$Event_name $Event_place $Event_time" scope = "user">
 								</context>
