@@ -5,7 +5,7 @@
 			<output value = "$starttype Как назовем событие?"/>
 				<input id = "eventname" pattern = "$Text">
 					<context>
-						<var name = "Event_name" pattern = "$Text"/>
+						<var name = "Event_name" value = "$Text"/>
 						<output value = "Окей, встреча будет называться $Event_name. Теперь место встречи"/>
 						<input id = "place" pattern = "$Text">
 							<context>
