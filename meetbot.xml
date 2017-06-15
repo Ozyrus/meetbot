@@ -4,16 +4,16 @@
 		<context id = "eventname_cntxt">
 			<output value = "$starttype Как назовем событие?"/>
 				<input id = "eventname" pattern = "$Text">
-					<context>
-						<var name = "Event_name" value = "$Text"/>
+					<var name = "Event_name" value = "$Text"/>
+					<context id = "eventplace">
 						<output value = "Окей, встреча будет называться $Event_name. Теперь место встречи"/>
 							<input id = "place" pattern = "$Text">
-								<context>
 								<var name = "Event_place" value = "$Text"/>
+								<context>
 								<output value = "Ок: встреча будет в $Event_place. Теперь время и дату."/>
 								<input id = "eventtime" pattern = "$Text">
+									<var name = "Event_time" value = "$Text"/>
 									<context>
-										<var name = "Event_time" value = "$Text"/>
 										<output value = "Хорошо; встреча называется $Event_name, будет проходить в $Event_place в $Event_time"/>
 										<var name = "$Event_name" value = "$Event_name $Event_place $Event_time" scope = "user"/>
 									</context>
