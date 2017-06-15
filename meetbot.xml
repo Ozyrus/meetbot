@@ -10,13 +10,13 @@
 						<input id = "place" pattern = "$Text">
 							<context>
 							<var name = "Event_place" value = "$Text">
-							<ouput value = "Ок: встреча будет в $Event_name. Теперь время и дату."/>
+							<ouput value = "Ок: встреча будет в $Event_place. Теперь время и дату."/>
 							<input id = "eventtime" pattern = "$Text">
 								<context>
-								<var name = "Event_time" value = "$Text"/>
-								<ouput value = "Хорошо; встреча называется $Event_name, будет проходить в $Event_place в $Event_time"/>
-									<context id = "root"/>
-								<var name = "$Event_name" value = "$Event_name $Event_place $Event_time" scope = "user">
+									<var name = "Event_time" value = "$Text"/>
+									<ouput value = "Хорошо; встреча называется $Event_name, будет проходить в $Event_place в $Event_time"/>
+									<var name = "$Event_name" value = "$Event_name $Event_place $Event_time" scope = "user">
+										<context id = "root"/>
 								</context>
 							</context>
 						</input>
@@ -35,7 +35,7 @@
 			</input>
 		</context>
 		<context>
-			<output value = "$Eventname"/>
+			<output value = "$Event_name"/>
 		</context>
 	</input>
 </context>
