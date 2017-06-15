@@ -15,7 +15,7 @@
 									<var name = "Event_time" value = "$Text" scope = 'context'/>
 									<context>
 										<var name = "$Event_name" value = "$Event_name $Event_place $Event_time" scope = "user"/>
-										<output value = "Хорошо; параметры встречи - %Event_name"/>
+										<output value = "Хорошо; параметры встречи - $Event_name"/>
 									</context>
 								</input>
 								</context>
